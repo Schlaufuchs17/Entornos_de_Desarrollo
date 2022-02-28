@@ -8,106 +8,104 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 class TestCociente {
-Cociente C_1 ; //ACF: Creamos el tipo cociente con el que haremos las pruebas
+Cociente c1 ; //ACF: Creamos el tipo cociente con el que haremos las pruebas
 	
 	@BeforeEach 
 	public  void clean () {
-		C_1 = new Cociente(); 
+		c1 = new Cociente(); 
 	}
 
-    //ACF: Creamos @Test para poder hacer pruebas
-
 	@Test
-	public void testcocienteint() { //Division de numeros reales
+	public void testDivisionReales() {
 		
 		
-		double Esperado = 7.62;
-		double Obtenido = C_1.cocienteint(70.1, 9.2);
-		assertEquals(Esperado, Obtenido);
+		double ResultadoEsperado = 7.62;
+		double ResultadoObtenido = c1.divisionReales(70.1, 9.2);
+		assertEquals(ResultadoEsperado, ResultadoObtenido);
 		
 		
 		
-		Esperado =9.223372036854776E16;
-		Obtenido = C_1.cocienteint(70.2, 0);
-		assertEquals(Esperado, Obtenido);
+		ResultadoEsperado =9.223372036854776E16;
+		ResultadoObtenido = c1.divisionReales(70.2, 0);
+		assertEquals(ResultadoEsperado, ResultadoObtenido);
 		
 		
-		Esperado =0.0;
-		Obtenido = C_1.cocienteint(0, -9870.5);
-		assertEquals(Esperado, Obtenido);
+		ResultadoEsperado =0.0;
+		ResultadoObtenido = c1.divisionReales(0, -9870.5);
+		assertEquals(ResultadoEsperado, ResultadoObtenido);
 		
 	}
 	
 	@Test
-	public void testcociente() { //Division de numeros enteros
+	public void testDivisionEnteros() {
 	
 		
-		int Esperado = 20;
-		double Obtenido = C_1.cociente(80, 4);
-		assertEquals(Esperado, Obtenido);
+		int ResultadoEsperado = 20;
+		double ResultadoObtenido = c1.divisionEnteros(80, 4);
+		assertEquals(ResultadoEsperado, ResultadoObtenido);
 		
 	
 		
-		Esperado= 0;
-		Obtenido = C_1.cociente(0, 140);
-		assertEquals(Esperado, Obtenido);
+		ResultadoEsperado= 0;
+		ResultadoObtenido = c1.divisionEnteros(0, 140);
+		assertEquals(ResultadoEsperado, ResultadoObtenido);
 		
 	}
 	
 	@Test
-	public void testInverso() { //Numero inverso
+	public void testInverso() {
 		
-		double Esperado = 0.02;
-		double Obtenido = C_1.inverso(50.4);
-		double inverso = Math.pow(C_1.inverso(50.4), -1);
+		double ResultadoEsperado = 0.02;
+		double ResultadoObtenido = c1.inverso(50.4);
+		double inverso = Math.pow(c1.inverso(50.4), -1);
 		
-		assertEquals(Esperado, Obtenido);
+		assertEquals(ResultadoEsperado, ResultadoObtenido);
 		
-		if (C_1.inverso(50.4)*inverso == 1) {
+		if (c1.inverso(50.4)*inverso == 1) {
 			assertTrue(true);
 		}
 		
 		
-		Esperado = 9.223372036854776E16;
-		Obtenido = C_1.inverso(0);
-		inverso = Math.pow(C_1.inverso(0), -1);
+		ResultadoEsperado = 9.223372036854776E16;
+		ResultadoObtenido = c1.inverso(0);
+		inverso = Math.pow(c1.inverso(0), -1);
 		
-		assertEquals(Esperado, Obtenido);
+		assertEquals(ResultadoEsperado, ResultadoObtenido);
 		
-		if (C_1.inverso(0)*inverso == 1) {
+		if (c1.inverso(0)*inverso == 1) {
 			assertTrue(true);
 		}
 		
 	}
 	@Test
-	public void testRaiz() { //Raiz
+	public void testRaiz() {
 		
 		
-		double Esperado = 8.37;
-		double Obtenido = C_1.raiz(70);
+		double ResultadoEsperado = 8.37;
+		double ResultadoObtenido = c1.raiz(70);
 				
-		assertEquals(Esperado, Obtenido);
+		assertEquals(ResultadoEsperado, ResultadoObtenido);
 		
-		if (Obtenido*Obtenido == C_1.raiz(70)) {
+		if (ResultadoObtenido*ResultadoObtenido == c1.raiz(70)) {
 			assertTrue(true);
 		}
 		
 		
-		Esperado = 0.0;
-		Obtenido = Math.round(Math.sqrt(C_1.raiz(0.0))*100.0)/100.0;
+		ResultadoEsperado = 0.0;
+		ResultadoObtenido = Math.round(Math.sqrt(c1.raiz(0.0))*100.0)/100.0;
 				
-		assertEquals(Esperado, Obtenido);
+		assertEquals(ResultadoEsperado, ResultadoObtenido);
 		
-		if (Obtenido*Obtenido == C_1.raiz(0.0)) {
+		if (ResultadoObtenido*ResultadoObtenido == c1.raiz(0.0)) {
 			assertTrue(true);
 		}
 		
-		Esperado = 0.0;
-		Obtenido = Math.round(Math.sqrt(C_1.raiz(-7))*100.0)/100.0;
+		ResultadoEsperado = 0.0;
+		ResultadoObtenido = Math.round(Math.sqrt(c1.raiz(-7))*100.0)/100.0;
 				
-		assertEquals(Esperado, Obtenido);
+		assertEquals(ResultadoEsperado, ResultadoObtenido);
 		
-		if (Obtenido*Obtenido == C_1.raiz(-7)) {
+		if (ResultadoObtenido*ResultadoObtenido == c1.raiz(-7)) {
 			assertTrue(true);
 		}
 
